@@ -122,7 +122,8 @@ def read_ws(metadata_file_path, labels, start_dt, end_dt):
 
                 for item in result:
                     time_dt = dt.datetime.fromtimestamp(
-                        item["timestamp"] / 1000, tz=dt.timezone.utc
+                        item["timestamp"] / 1000,
+                        tz=dt.UTC,
                     )
                     point = {
                         "measurement": INFLUXDB_MEASUREMENT,
